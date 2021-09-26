@@ -1,6 +1,6 @@
 $(document).ready(function () {
   $(".saveBtn").click(function () {
-    console.log("The button has been clicked");
+    //console.log("The button has been clicked");
 
     var userInput = $(this).siblings(".description").val();
     var timeBlock = $(this).parent().attr("id");
@@ -9,12 +9,14 @@ $(document).ready(function () {
     localStorage.setItem(timeBlock, userInput);
   });
 
+  //add fucntion to display the Day Months Year ( using Moment JS)
   function getCurrentDate() {
     document.getElementById("currentDay").innerHTML =
       moment().format("dddd MMMM Do YYYY");
   }
-
   getCurrentDate();
+
+  //Add function to apply proper css style to the current time
 
   function getCurrentTime() {
     var currentTime = moment().hours();
